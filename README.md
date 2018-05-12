@@ -1,13 +1,13 @@
 # logCutting
-logrus cutiing hooks.
+logrus的日志切割钩子。
 
-#### Install
+#### 安装
 
-> first : go get -u github.com/Sirupsen/logrus
+> 第一步  go get -u github.com/Sirupsen/logrus
 
-> second : go get -u github.com/BlueSimle/logcutting
+> 第二步  go get -u github.com/BlueSimle/logcutting
 
-#### Example
+#### 例子
 
 ```go
 package main
@@ -20,12 +20,12 @@ import (
 
 func init() {
 	log.SetFormatter(&log.TextFormatter{
-		TimestampFormat:  "2006-01-02 15:04:05",
+		TimestampFormat:  "2006-01-02 15:04:05",  //时间格式
 		ForceColors:      true,
 		QuoteEmptyFields: true,
 		FullTimestamp:    true,
 	})
-	log.AddHook(cut_log.ContextHook{LogPath:"/var/cut_log/log_cutting/"})
+	log.AddHook(cut_log.ContextHook{LogPath:"/var/cut_log/log_cutting/"}) //日志输出目录
 	log.SetOutput(os.Stdout)
 	log.SetLevel(log.Level(5))
 }
@@ -39,7 +39,7 @@ func main() {
 }
 ```
 
-#### Output
+#### 输出
 ```go
 DEBU[2018-05-12 15:15:15] A group of walrus emerges from the ocean      callerFile=" E:/gopath/src/logcutting/example.go:22 "
 INFO[2018-05-12 15:15:16] A group of walrus emerges from the ocean      callerFile=" E:/gopath/src/logcutting/example.go:23 "
