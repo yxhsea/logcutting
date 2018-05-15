@@ -3,8 +3,8 @@ package cut_log
 import (
 	"fmt"
 	log "github.com/sirupsen/logrus"
-	"logcutting/cut_path"
-	"logcutting/cut_time"
+	"github.com/BlueSimle/logcutting/cut_path"
+	"github.com/BlueSimle/logcutting/cut_time"
 	"os"
 	"runtime"
 	"strings"
